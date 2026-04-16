@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daniel Augusto Adventures</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="cima">
+        <div class="pfpDaniel">
+            <center>
+            <img src="imagens/Daniel.png" alt="Daniel Augusto" width="200px" height="200px">
+            <p>Daniel Augusto Lvl.<span id="nivel">1</span></p>
+            </center>
+        </div>
+
+        <table>
+                <tr class="luzAoPassarPorCima">
+                    <td><img src="imagens/Daniel.png" alt="Status" width="75px" height="75px" onclick="mostrarStatus()"></td>
+                </tr>
+                <tr class="luzAoPassarPorCima">
+                    <td><img src="imagens/Mochila.png" alt="Inventraio" width="75px" height="75px" onclick="mostrarInventario()"></td>
+                </tr>
+                <tr class="luzAoPassarPorCima">
+                    <td><img src="imagens/Geral.png" alt="Geral" width="75px" height="75px" onclick="mostrarGeral()"></td>
+                </tr>
+        </table>
+
+        <table>
+            <tr id="status" class="statusPersonagem">
+                <td>
+                    <div>
+                        <img src="imagens/Daniel.png" width="0px" height="245px">
+                    </div>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="stat">
+                                    <img src="imagens/Stats/Forca.png" width="50px" height="50px" title="Afeta dano causado por armas corpo a corpo &#013Aumenta dano de ataques criticos">
+                                    <p>&nbsp&nbsp&nbsp&nbsp<span id="forca">0</span></p>
+                                    <p class="statsBotoes">&nbsp&nbsp</p>
+                                    <button onclick="aumentarForca()" class="statsBotoes">&nbsp+&nbsp</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="stat">
+                                    <img src="imagens/Stats/Destreza.png" width="50px" height="50px" title="Afeta dano causado por armas de longo alcance &#013Diminui chance de errar ataque">
+                                    <p>&nbsp&nbsp&nbsp&nbsp<span id="destreza">0</span></p>
+                                    <p class="statsBotoes">&nbsp&nbsp</p>
+                                    <button onclick="aumentarDestreza()" class="statsBotoes">&nbsp+&nbsp</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="stat">
+                                    <img src="imagens/Stats/Constituicao.png" width="50px" height="50px" title="Afeta vida do jogador &#013Aumenta vida curada apos cada batalha">
+                                    <p>&nbsp&nbsp&nbsp&nbsp<span id="constituicao">0</span></p>
+                                    <p class="statsBotoes">&nbsp&nbsp</p>
+                                    <button onclick="aumentarConstituicao()" class="statsBotoes">&nbsp+&nbsp</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="stat">
+                                    <img src="imagens/Stats/Velocidade.png" width="50px" height="50px" title="Afeta quem ataca primeiro numa batalha &#013Caso a velocidade seja o dobro do inimigo tens duas rodadas">
+                                    <p>&nbsp&nbsp&nbsp&nbsp<span id="velocidade">0</span></p>
+                                    <p class="statsBotoes">&nbsp&nbsp</p>
+                                    <button onclick="aumentarVelocidade()" class="statsBotoes">&nbsp+&nbsp</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="stat">
+                                    <img src="imagens/Stats/Sorte.png" width="50px" height="50px" title="Aumenta chance de ataques criticos &#013">
+                                    <p>&nbsp&nbsp&nbsp&nbsp<span id="sorte">0</span></p>
+                                    <p class="statsBotoes">&nbsp&nbsp</p>
+                                    <button onclick="aumentarSorte()" class="statsBotoes">&nbsp+&nbsp</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <p>XP para o proximo nível: <span id="xpProxNivel">0</span></p>
+                    <p>Pontos Disponiveis: <span id="pontosPorMeter">0</span></p>
+                </td>
+            </tr>
+            <tr id="inventario" class="statusInventario">
+                <td>
+                    <div>
+                        <img src="imagens/Daniel.png" width="0px" height="245px">
+                    </div>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="inv">
+                                    <img src="imagens/Armadura/Capacete1.png" id="capacete" width="150px" height="150px">
+                                    <img src="imagens/Armadura/Peitoral1.png" id="peitoral" width="150px" height="150px">
+                                    <img src="imagens/Armadura/Calcas1.png" id="calcas" width="150px" height="150px">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr id="geral" class="statusGeral">
+                <td>
+                    <div>
+                        <img src="imagens/Daniel.png" width="0px" height="245px">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="codigo.js"></script>
+</body>
+</html>
