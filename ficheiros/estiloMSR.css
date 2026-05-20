@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color:rgb(49, 49, 49);
+    background-image: url('imagens/masmorra.png');
 }
 
 .statsInimigo{
@@ -9,4 +10,13 @@ body {
   background-color:rgb(32, 32, 32);
   color: white;
   border-color:black;
+}
+
+.statsJogador{
+  justify-content: center;
+  border-style: solid;
+  background-color:rgb(158, 158, 158);
+  color: rgb(0, 0, 0);
+  border-color:black;
+  height: 25vh;
 }
