@@ -20,3 +20,11 @@ body {
   border-color:black;
   height: 25vh;
 }
+
+.textoBatalha{
+  background-color:rgb(82, 82, 82);
+  justify-content: center;
+  border-style: solid;
+  color: rgb(0, 0, 0);
+  border-color:black;
+}
