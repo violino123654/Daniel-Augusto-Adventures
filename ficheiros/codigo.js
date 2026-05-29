@@ -32,14 +32,38 @@ const xpProxNivelDisplay = document.getElementById("xpProxNivel");
 const pontosPorMeterDisplay = document.getElementById("pontosPorMeter");
 
 
-function guardarProgresso() {
-  document.cookie = "forca=" + forca;
-  document.cookie = "destreza=" + destreza;
-  document.cookie = "constituicao=" + constituicao;
-  document.cookie = "velocidade=" + velocidade;
-  document.cookie = "sorte=" + sorte;
+function salvarProgresso() {
+  if(typeof localStorage !== "undefined"){
+    localStorage.setItem("nivel", nivel.toString());
+    localStorage.setItem("forca", forca.toString());
+    localStorage.setItem("destreza", destreza.toString());
+    localStorage.setItem("constituicao", constituicao.toString());
+    localStorage.setItem("velocidade", velocidade.toString());
+    localStorage.setItem("sorte", sorte.toString());
+    localStorage.setItem("xpProxNivel", xpProxNivel.toString());
+    localStorage.setItem("pontosPorMeter", pontosPorMeter.toString());
+  }
+  else{
+    console.warn("LocalStorage não está disponível no navegador.");
+  }
+}
 
-  document.cookie = "xpProxNivel=" + xpProxNivel;
+function carregarProgresso() {
+  if (typeof localStorage !== "undefined") {
+    nivel = parseInt(localStorage.getItem("nivel"), 10) || nivel;
+    forca = parseInt(localStorage.getItem("forca"), 10) || forca;
+    destreza = parseInt(localStorage.getItem("destreza"), 10) || destreza;
+    constituicao = parseInt(localStorage.getItem("constituicao"), 10) || constituicao;
+    velocidade = parseInt(localStorage.getItem("velocidade"), 10) || velocidade;
+    sorte = parseInt(localStorage.getItem("sorte"), 10) || sorte;
+    xpProxNivel = parseInt(localStorage.getItem("xpProxNivel"), 10) || xpProxNivel;
+    const pontosSalvos = parseInt(localStorage.getItem("pontosPorMeter"), 10);
+    pontosPorMeter = nivel - (forca+destreza+constituicao+velocidade+sorte);
+  }
+}
+
+function guardarProgresso() {
+  salvarProgresso();
 }
 
 function atualizarStats(){
@@ -171,7 +195,6 @@ atualizarArmadura()
 
 
 
-
 function mostrarStatus(){
     var st = document.getElementById("status");
     var inv = document.getElementById("inventario");
@@ -208,7 +231,15 @@ function cenasIniciais(){
     st.style.display = "block";
     inv.style.display = "none";
     gr.style.display = "none";
+
 }
 
-cenasIniciais();
+
+function irParaMasmorra(){
+    guardarProgresso();
+    window.location.href = "masmorra.html";
+}
+
+carregarProgresso();
 atualizarStats();
+cenasIniciais();

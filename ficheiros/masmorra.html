@@ -13,15 +13,27 @@
     </div>
     <img id="imagemInimigo" width="350px" height="350px"></img>
     <div class="statsJogador">
-        <p>Daniel Augusto</p>
+        <p>Daniel Augusto -  Nivel <span id="nivel">1</span></p>
         <p>Vida: <span id="jogadorVida">100</span>/<span id="jogadorVidaMAX">100</span></p>
-        <table>
-            <tr><button onclick="atacar()" class="butaoJGDR">Ataque - <span id="danoAtaqueJGDR"></span><img src="imagens/Stats/forca.png" width="25px" height="25px"></button></tr>
-            <tr><button class="butaoJGDR">Magia</button></tr>
-        </table>
+        <div id="butaoJGDR" style="display: block;">
+            <table>
+                <tr><button onclick="usarSoco()">Soco - <span id="danoAtaqueJGDR"></span><img src="imagens/Stats/forca.png" width="25px" height="25px"></button></tr>
+                <tr><button onclick="usarTiro()">Flecha - <span id="danoFlechaJGDR"></span><img src="imagens/Stats/Destreza.png " width="25px" height="25px"></button></tr>
+                <tr><button onclick="usarMagia()">Magia - <span id="danoMagiaJGDR"></span> (<img src="imagens/Stats/forca.png" width="25px" height="25px">+<img src="imagens/Stats/Destreza.png" width="25px" height="25px">)/2</button></tr>
+            </table>
+        </div>
+        <div id="depoisDeMTR" style="display: none;">
+            <p>Ganhaste <span id="xpGanho">0</span> XP!</p>
+            <p>Encontraste <span id="itemQuant">0</span> <span id="itemNome">0</span>!</p>
+            <table>
+                <tr><button onclick="continuar()">Continuar a explorar?</button></tr>
+                <tr><button onclick="voltar()">Voltar</button></tr>
+            </table>
+        </div>
+        <button onclick="voltar()" id="voltar" style="display: none;">Voltar</button>
     </div>
     <div class="textoBatalha">
-            <p id="textoBatalha"></p>
+        <p id="textoBatalha"></p>
     </div>
     <script src="masmorrax.js"></script>
     </center>
